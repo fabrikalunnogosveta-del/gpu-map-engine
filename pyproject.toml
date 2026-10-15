@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-map-engine"
+version = "0.1.0"
+description = "Procedural 2.5D map toolkit: homography perspective, tensor compositing, water, hillshade"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Maxim Parshshin" }]
+dependencies = [
+  "torch>=2.0",
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["mapengine*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
